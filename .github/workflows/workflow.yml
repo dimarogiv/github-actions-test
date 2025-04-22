@@ -6,9 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ls -Al
       - run: pip install -r requirements.txt
       - run: |
-          echo hello:world
-          coverage run -m pytest --cov-report=xml:coverage_gha.xml --cov=.
-          cat coverage_gha.xml
+          echo $(coverage run -m pytest --cov-report=term --cov=.
+          grep TOTAL |
+          sed 's/^.* \([0-9]\+\)%.*$/\1/')
