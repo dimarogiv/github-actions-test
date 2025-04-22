@@ -9,4 +9,4 @@ jobs:
       - run: ls -Al
       - run: pip install -r requirements.txt
       - run: coverage run -m pytest
-      - run: | bash -c 'echo $(coverage report -m | grep TOTAL | sed \'s/^.* \([0-9]\+\)%.*$/\1/\')'
+      - run: echo $(coverage report -m | grep TOTAL | sed 's/^.* \([0-9]\+\)%.*$/\1/')
