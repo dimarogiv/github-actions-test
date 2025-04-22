@@ -8,6 +8,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: pip install -r requirements.txt
       - run: |
-          echo $(coverage run -m pytest --cov-report=term --cov=. |
+          [[ $(coverage run -m pytest --cov-report=term --cov=. |
           grep TOTAL |
-          sed 's/^.* \([0-9]\+\)%.*$/\1/')
+          sed 's/^.* \([0-9]\+\)%.*$/\1/') -ge 70 ]]
