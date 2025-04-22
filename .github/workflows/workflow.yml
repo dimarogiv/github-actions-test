@@ -9,5 +9,6 @@ jobs:
       - run: ls -Al
       - run: pip install -r requirements.txt
       - run: |
+          echo hello:world
           coverage run -m pytest --cov-report=xml:coverage_gha.xml
           cat coverage_gha.xml
