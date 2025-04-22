@@ -10,5 +10,5 @@ jobs:
       - run: pip install -r requirements.txt
       - run: |
           echo hello:world
-          coverage run -m pytest --cov-report=xml:coverage_gha.xml
+          coverage run -m pytest --cov-report=xml:coverage_gha.xml --cov=.
           cat coverage_gha.xml
